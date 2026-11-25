@@ -1,0 +1,10 @@
+IgwWCwQAAC0=          ->  libnesec
+IgwWCwQAAC1TQA==      ->  libnesec64
+IgwWCwQAAC1LBwo=      ->  libnesec.so
+YQkdBw8WFisGWhYO      ->  /libnesec.so
+YRERCBEfDCw=          ->  /templib
+Nl1C                  ->  x86
+Nl1COldH              ->  x86_64
+LwEWOgQdBCwJEQE=      ->  adb_enabled
+DDAzNzEnOh0yPTEiOw==  ->  BUGRPT_SWITCH
+IQs=                  ->  on

@@ -1,0 +1,47 @@
+[+] unpack/assets/pgame.pkg.bin: 106343 bytes
+[+] 带扩展名路径: 6   裸标识符: 1199   合计写出: 1205 -> _pkg_filelist.txt
+[+] 顶层目录分布:
+    Pb               1
+    Src              1
+
+[+] 前 40 条:
+    Demo.luae
+    LD67.luae
+    Pb/pgame.pbe
+    Src/Actor/Animation.luae
+    or.luae
+    refly.luae
+    A3Do
+    ABase
+    ACamp
+    ACampe
+    ACard
+    ACond
+    ACrop6
+    AData
+    ADescd
+    ADire
+    AExitm
+    AFish
+    AFram
+    AGold
+    AHash
+    AIcon
+    AImag
+    AItem
+    AKill
+    ALang
+    ALead
+    AMaskS
+    AMemb
+    ANpcE
+    AOper
+    APack
+    APo
+    APool4
+    ARank
+    ARanku
+    ARule8
+    ASeal
+    ATeamL
+    ATile

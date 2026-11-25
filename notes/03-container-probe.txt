@@ -1,0 +1,36 @@
+=== 1) 容器布局 ===
+  AppInfo.jsone                size=      336 payload=      328 容器 declared=0x144(324)
+  Config.jsone                 size=      632 payload=      624 容器 declared=0x269(617)
+  Game.jsone                   size=     1536 payload=     1528 容器 declared=0x5F6(1526)
+  Localization.jsone           size=      688 payload=      680 容器 declared=0x2A4(676)
+  LanguageDbZH.luae            size=   423304 payload=   423296 容器 declared=0x67580(423296)
+
+=== 2) 跨文件密文相关性 (XOR, 前 48 字节) ===
+  AppInfo.jsone ^ Config.jsone: 04910d8489573d5100000000000000008007216788acaf7745219d73a202bab1f68eecac6eb7e242b89d737fc2960fbc
+      完全相同的区间: [8,16)
+  AppInfo.jsone ^ Game.jsone: c935d990cf7112f300000000000000008007216788acaf77419e1128a950a09982de68e346dfa46112ef6ddd1f39b113
+      完全相同的区间: [8,16)
+  AppInfo.jsone ^ Localization.jsone: 99217aa11f26357700000000000000000000000000000000ffc804c325ae7cae1ae1e90bbb76c1a30b6f0a461005b04e
+      完全相同的区间: [8,24)
+  AppInfo.jsone ^ LanguageDbZH.luae: 1639c2f726958b0307f6a6106bc1c0a42dd09704d482fea1be202ab622c82dc9f6cf7e66b7679e31ea9a1aa129df568c
+
+=== 3) 已知明文推断 keystream 前缀 (假设明文以 '{"' 开始) ===
+  AppInfo.jsone                ks[0:2]=8347
+  Config.jsone                 ks[0:2]=87d6
+  Game.jsone                   ks[0:2]=4a72
+  Localization.jsone           ks[0:2]=1a66
+  LanguageDbZH.luae            ks[0:2]=957e
+
+=== 4) 周期检测 (对最长样本 LanguageDbZH.luae, payload=423296) ===
+  Hamming(bit/byte) 最小的候选密钥长度:
+    k=  9  3.722 bit/byte
+    k= 32  3.758 bit/byte
+    k= 14  3.768 bit/byte
+    k= 25  3.770 bit/byte
+    k= 21  3.827 bit/byte
+    k=  7  3.839 bit/byte
+    k= 68  3.862 bit/byte
+    k= 15  3.867 bit/byte
+  结论: 最优 3.722 bit/byte, 接近随机(4.0) -> 无短周期，属带密钥流密码
+
+=== 5) 16 字节块重复统计 (前 256KB): 重复块数量 = 7 ===

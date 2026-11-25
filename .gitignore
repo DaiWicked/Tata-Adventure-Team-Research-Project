@@ -1,0 +1,48 @@
+# ===== 样本与派生二进制：一律不入库 =====
+# 原始安装包（342MB）与解包产物（各约 470MB），任何人本地重跑脚本即可再生。
+tata.apk
+*.apk
+*.xapk
+*.obb
+
+# 解包 / 反编译输出
+unpack/
+apktool_out/
+jadx_out/
+build/
+out/
+
+# 工具链（工具链体积大且含平台相关二进制，见 tools/README.md 自行获取）
+tools/
+
+# 日志
+*.log
+apktool.log
+jadx.log
+
+# 大体积派生产物（由 scripts/ 再生，不入库）
+_il2cpp_strings.txt
+_*_strings.txt
+_pkg_filelist.txt
+_*.txt
+*.so
+*.dex
+*.bundle
+*.pkg
+*.luae
+*.jsonbin
+
+# 本地环境
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# 本地 pip --target 依赖（UnityPy/pyelftools），按需重装
+libs/
+# 抓包与截图不入库
+captures/
+*.pcap
