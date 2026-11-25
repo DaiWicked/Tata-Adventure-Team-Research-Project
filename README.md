@@ -45,15 +45,17 @@ docs/08-可变面与GM入口评估.md 能改什么/GM 命令有效性/UI 入口/
 docs/09-真机动态验证记录.md   真机实测：反调试检测链、TracerPid 遮蔽结果、设备侧新发现
 docs/10-真机内存取证-明文还原.md root 直读 /proc/pid/mem：拿到解密后的元数据(HTPX)与 Lua 明文、6282 条模块表
 docs/11-GM面板鉴权判定.md      P0：31 个 GM Tab 全清单 + 鉴权在服务端的三条证据（GMIsNotAllowed）
+docs/12-战报上报面分析.md      P2：BtInput/BtRecord 记录复算链、hasBtRecord 降级缺口、maxDamagePct 上限
 notes/                    脚本跑出来的原始证据（可直接引用的文本）
 notes/00-证据索引.md       每条结论对应哪次脚本输出、怎么复跑
-scripts/                  可复现的分析脚本（01–08、10–12 纯标准库；07 依赖可选 UnityPy）
+scripts/                  可复现的分析脚本（01–08、10–13 纯标准库；07 依赖可选 UnityPy）
 scripts/adb.sh            真机 adb 封装（绕开 Git Bash 的路径改写）
 scripts/run_frida.py      把 scripts/frida/*.js 挂到设备进程并收日志（支持 attach / spawn）
 scripts/pull_ranges.py    真机内存段拉取：按 maps 逐段 dd → 本地扫魔数与明文特征
 scripts/10_carve_metadata.py  从 dump 里切出 HTPX 容器内的 IL2CPP 元数据并抽符号表
 scripts/11_carve_lua.py       从 dump 里抽 Lua 模块路径表 + Lua 5.4 字节码块
 scripts/12_scan_gm_surface.py GM 面扫描：标识符/A 段、权限类词/B 段、交集/C 段 → notes/12-gm-strings.txt
+scripts/13_scan_report_surface.py 战报面扫描：上报入口/字段候选/复算校验 三段 → notes/13-report-strings.txt
 scripts/device_*.sh       设备侧扫描脚本（dd|grep 版，留作踩坑记录；已由 pull_ranges.py 取代）
 scripts/frida/            九个真机动态脚本（反调试中和 / dump 元数据 / 扫 Lua / 看签名 / 改时钟 / 看网络 / 抢跑 dump / 早 hook / 抹 TracerPid）+ hook.js / scan_only.js
 captures/device/          真机取证产物（截图、Tests 目录打包、memdump），默认不入库
